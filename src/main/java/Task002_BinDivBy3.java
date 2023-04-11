@@ -19,7 +19,9 @@ public class Task002_BinDivBy3 {
             if (i + 1 < number.length() && Character.compare(number.charAt(i+1), '1')==0) oneOnOdd++;
         }
         System.out.println(oneOnEven + "  - " +oneOnOdd);
-        if ( (oneOnEven - oneOnOdd) % 3 == 0) return true;
-        else return false;
+//        if ( (oneOnEven - oneOnOdd) % 3 == 0) return true;
+//        else return false;
+
+        return (oneOnEven - oneOnOdd) % 3 == 0;
     }
 }
