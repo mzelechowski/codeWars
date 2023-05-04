@@ -1,3 +1,5 @@
+import java.util.stream.IntStream;
+
 public class Task005_Equal_Sides_Of_An_Array {
     public static void main(String[] args) {
 
@@ -34,5 +36,11 @@ public class Task005_Equal_Sides_Of_An_Array {
         }
         return index;
     }
+
+        public static int findEvenIndex1(int[] arr) {
+            return IntStream.range(0, arr.length)
+                    .filter(n -> IntStream.of(arr).limit(n).sum() == IntStream.of(arr).skip(n + 1).sum())
+                    .findFirst().orElse(-1);
+        }
 
 }
