@@ -17,21 +17,19 @@ public class Task005_Equal_Sides_Of_An_Array {
         System.out.println(findEvenIndex(numbers));
 
     }
-    public static int findEvenIndex(int[] arr){
-        int result=-1;
+
+    public static int findEvenIndex(int[] arr) {
+        int result = -1;
         for (int i = 0; i < arr.length; i++) {
-            System.out.print("Dla i rownego "+i);
             int sumLeft = 0, sumRight = 0;
             for (int j = 0; j < i; j++) {
                 sumLeft = arr[j] + sumLeft;
             }
-            System.out.print(", wynik lewy: " +sumLeft);
-            for (int j = i+1; j < arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 sumRight = arr[j] + sumRight;
             }
-            System.out.println(", Wynik prawy: " +sumRight);
-            if(sumLeft==sumRight){
-                result=i;
+            if (sumLeft == sumRight) {
+                result = i;
             }
         }
         return result;
