@@ -15,20 +15,24 @@ public class Task005_Equal_Sides_Of_An_Array {
     }
 
     public static int findEvenIndex(int[] arr) {
-        int result = -1;
+        int index = -1;
+        int sumAtIndex = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
+
             int sumLeft = 0, sumRight = 0;
             for (int j = 0; j < i; j++) {
                 sumLeft = arr[j] + sumLeft;
             }
+
             for (int j = i + 1; j < arr.length; j++) {
                 sumRight = arr[j] + sumRight;
             }
-            if (sumLeft == sumRight) {
-                result = i;
+            if (sumLeft == sumRight && sumLeft < sumAtIndex) {
+                index = i;
+                sumAtIndex = sumLeft;
             }
         }
-        return result;
+        return index;
     }
 
 }
