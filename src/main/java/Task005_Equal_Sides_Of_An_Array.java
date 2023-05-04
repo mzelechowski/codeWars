@@ -1,7 +1,3 @@
-import javax.swing.plaf.basic.BasicSplitPaneUI;
-import java.util.Arrays;
-import java.util.List;
-
 public class Task005_Equal_Sides_Of_An_Array {
     public static void main(String[] args) {
 
